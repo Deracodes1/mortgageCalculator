@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mortgage Repayment Calculator</title>
+    <link rel="shortcut icon" href="favicon-32x32.png" type="image/x-icon" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <section class="main">
+      <div class="left-main">
+        <div class="loader-wrapper" id="pre-loader">
+          <div class="loading-spinner"></div>
+        </div>
+        <div class="form-title-div">
+          <h1>Mortgage Calculator</h1>
+          <button type="button" class="clear-btn">Clear all</button>
+        </div>
+        <form action="" class="form">
+          <label for="amount">Moratgage Amonut</label>
+          <div class="amount-div">
+            <p class="currency-sign">#</p>
+            <input type="text" name="amount" id="amount" />
+          </div>
+          <span class="error" aria-live="polite"></span>
+          <div class="payment-conditions">
+            <div class="left-payment-conditions">
+              <label for="term">Mortgage Term</label>
+              <div class="mortgage-term">
+                <input type="number" name="years" id="term" />
+                <p class="years">years</p>
+              </div>
+              <span class="error2" aria-live="polite"></span>
+            </div>
+            <div class="right-payment-conditions">
+              <label for="rate">interest rate</label>
+              <div class="interst-rate-div">
+                <input type="number" name="rate" id="rate" />
+                <p class="interest-rate">%</p>
+              </div>
+              <span class="error-3" aria-live="polite"></span>
+            </div>
+          </div>
+          <div class="type">
+            <label class="Mortgage-type" for="type">Mortgage type</label>
+          </div>
+          <div class="payment-type">
+            <div class="repayment-div">
+              <input
+                type="radio"
+                name="Mortgage-type"
+                id="full-repayment"
+                value="repayment"
+              />
+              <p>Repayment</p>
+            </div>
+            <div class="interest-only-div">
+              <input
+                type="radio"
+                name="Mortgage-type"
+                id="interest-only"
+                value="interest"
+              />
+              <p>interest only</p>
+            </div>
+          </div>
+          <span class="error-radio" aria-live="polite"></span>
+
+          <button class="calculate-btn">
+            <img src="icon-calculator.svg" alt="calculator" srcset="" />
+            calculate repayments
+          </button>
+        </form>
+      </div>
+
+      <div class="right-main">
+        <div class="hider1">
+          <div class="mother-div">
+            <div class="display-time">7:03</div>
+            <img src="illustration-empty.svg" alt="" srcset="" />
+            <h2 class="results">Results Shown here</h2>
+            <p>
+              Complete the form and click "calculate repayments" to see what
+              your monthly repayment will be
+            </p>
+          </div>
+        </div>
+        <div class="hider2 hide">
+          <div class="mother-div2">
+            <div class="display-time">7:03</div>
+            <h2>Your results</h2>
+            <p>
+              Your results are Shown below based on the information you
+              provided. to adjust the results, edit the form and click
+              "calculate repaymets" again.
+            </p>
+            <div class="repayment-details">
+              <p>Your Monthly repayments</p>
+              <p class="money">
+                #<span class="monthly-repyement">1,797.74</span>
+              </p>
+              <hr />
+              <p>Total you will repay over the term</p>
+              <p class="money">
+                #<span class="total-repyement">539,322.94</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="script.js"></script>
+  </body>
+</html>

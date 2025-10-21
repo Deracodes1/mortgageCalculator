@@ -1,0 +1,407 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: "plus jakarta sans";
+  font-weight: 500;
+  src: url("/fonts/static/PlusJakartaSans-Medium.ttf");
+  font-style: normal;
+}
+@font-face {
+  font-family: "plus jakarta sans";
+  src: url("/fonts/static/PlusJakartaSans-Bold.ttf");
+  font-style: normal;
+  font-weight: 500;
+}
+@font-face {
+  font-family: "plus jakarta sans";
+  src: url("/fonts/PlusJakartaSans-Italic-VariableFont_wght.ttf");
+  font-style: italic;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  display: flex;
+  font-size: 1.6rem;
+  font-family: "plus jakarta sans";
+  height: 100dvh;
+  min-height: 100dvh;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(202, 86%, 94%);
+}
+input {
+  font-family: "plus jakarta sans";
+}
+.display-time {
+  position: absolute;
+  top: 5px;
+  right: 20px;
+  color: hsl(61, 70%, 52%);
+}
+
+.main {
+  display: flex;
+  background-color: hsl(202, 86%, 94%);
+  width: 70%;
+  margin: auto;
+}
+.loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  z-index: 9999;
+}
+.loading-spinner {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 50%;
+  border: 4px solid hsl(61, 70%, 52%);
+  border-top: 4px solid hsl(202, 55%, 16%);
+  animation: spin 2s linear infinite;
+}
+/* left handside main div styling */
+.left-main {
+  font-size: 1rem;
+  width: 50%;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  color: hsl(200, 24%, 40%);
+  background-color: hsl(0, 0%, 100%);
+  padding: 50px 60px 50px 50px;
+}
+.form-title-div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+.amount-div {
+  display: flex;
+  margin-top: 7px;
+  border-radius: 4px;
+  box-shadow: 1px 1px 1px 1px hsl(200, 24%, 40%);
+}
+
+.amount-div p {
+  border-top-left-radius: 2px;
+  color: hsl(200, 24%, 40%);
+  padding: 0 1rem;
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  background-color: hsl(203, 41%, 72%);
+}
+.amount-div input {
+  border: none;
+  width: 100%;
+  outline: none;
+  font-size: 1.6rem;
+  padding: 1.2rem;
+}
+.payment-conditions {
+  display: flex;
+  margin-top: 20px;
+  justify-content: space-between;
+}
+label {
+  color: hsl(200, 24%, 40%);
+  font-size: 1.6rem;
+}
+.right-payment-conditions,
+.left-payment-conditions {
+  display: flex;
+  width: 45%;
+  flex-direction: column;
+}
+.mortgage-term {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 7px;
+  border-radius: 4px;
+  box-shadow: 1px 1px 1px 1px hsl(200, 24%, 40%);
+}
+.interst-rate-div {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 7px;
+  border-radius: 4px;
+  box-shadow: 1px 1px 1px 1px hsl(200, 24%, 40%);
+}
+.interst-rate-div p,
+.mortgage-term p {
+  border-top-left-radius: 2px;
+  color: hsl(200, 24%, 40%);
+  padding: 0 1rem;
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  background-color: hsl(203, 41%, 72%);
+}
+.interst-rate-div input,
+.mortgage-term input {
+  border: none;
+  width: 100%;
+  font-size: 1.6rem;
+  padding: 1.2rem;
+  outline: none;
+}
+
+.repayment-div {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 1px 1px 1px 1px hsl(200, 24%, 40%);
+}
+.repayment-div p {
+  font-weight: 700;
+  margin-left: 10px;
+  padding: 0 1rem;
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+}
+.repayment-div input {
+  appearance: none;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #999;
+  transition: 0.2s all linear;
+  margin-right: 5px;
+  position: relative;
+  cursor: pointer;
+}
+.repayment-div input:checked {
+  border: 6px solid hsl(61, 70%, 52%);
+}
+.interest-only-div {
+  display: flex;
+  margin-top: 15px;
+  align-items: center;
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 1px 1px 1px 1px hsl(200, 24%, 40%);
+}
+.interest-only-div p {
+  font-weight: 700;
+  margin-left: 10px;
+  padding: 0 1rem;
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+}
+.interest-only-div input {
+  appearance: none;
+  border-radius: 50%;
+  width: 16px;
+  cursor: pointer;
+  height: 16px;
+  border: 2px solid #999;
+  transition: 0.2s all linear;
+  margin-right: 5px;
+  position: relative;
+}
+.interest-only-div input:checked {
+  border: 6px solid hsl(61, 70%, 52%);
+}
+.calculate-btn {
+  padding: 8px 40px;
+  background-color: hsl(61, 70%, 52%);
+  color: hsl(202, 55%, 16%);
+  margin-top: 40px;
+  font-family: "plus jakarta sans";
+  font-size: 1.6rem;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.calculate-btn img {
+  margin-right: 7px;
+}
+.type {
+  margin-top: 10px;
+}
+/* right handside main div styling */
+.right-main {
+  width: 50%;
+  padding: 30px 0;
+  margin-left: -30px;
+  z-index: 1000;
+  border-top-right-radius: 25px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 25px;
+  display: flex;
+  justify-content: center;
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(202, 55%, 16%);
+}
+.hider1,
+.hider2 {
+  position: relative;
+}
+.hide {
+  display: none;
+}
+.mother-div {
+  display: flex;
+  width: 100%;
+  margin-top: 70px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.mother-div2 {
+  width: 85%;
+  margin: 15px auto 0 auto;
+}
+.mother-div2 h2 {
+  margin-bottom: 15px;
+}
+.repayment-details {
+  border-top: 3px solid hsl(61, 70%, 52%);
+  border-radius: 5px;
+  background-color: hsl(200, 24%, 40%);
+  padding: 25px;
+  margin-top: 25px;
+}
+.repayment-details hr {
+  height: 2px;
+  background-color: hsl(0, 0%, 100%);
+  margin: 20px 0;
+}
+.money {
+  color: hsl(61, 70%, 52%);
+  margin-top: 10px;
+  font-weight: 500;
+  font-size: 2rem;
+}
+.monthly-repyement {
+  color: hsl(61, 70%, 52%);
+  margin-top: 10px;
+  font-weight: 500;
+  font-size: 2rem;
+}
+.total-repyement {
+  color: hsl(61, 70%, 52%);
+  margin-top: 10px;
+  font-weight: 500;
+  font-size: 2rem;
+}
+.results {
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+.clear-btn {
+  border-top: none;
+  border-bottom: 1px solid hsl(200, 24%, 40%);
+  border-left: none;
+  color: hsl(200, 24%, 40%);
+  border-right: none;
+  background-color: hsl(0, 0%, 100%);
+  padding-bottom: 1px;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+.error,
+.error-radio,
+.error2,
+.error-3 {
+  margin-top: -7px;
+  padding-top: 10px;
+  width: 100%;
+  color: hsl(4, 69%, 50%);
+}
+/* animation for website loader */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@media screen and (max-width: 385px) {
+  .main {
+    flex-direction: column;
+    width: 100%;
+    margin: auto;
+  }
+  .loading-spinner {
+    width: 40px;
+    height: 40px;
+  }
+  .left-main {
+    width: 100%;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    padding: 30px 30px 30px 30px;
+  }
+  .form-title-div {
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 25px;
+  }
+  .clear-btn {
+    margin-top: 12px;
+    text-align: left;
+    width: 50px;
+  }
+  .payment-conditions {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    justify-content: space-between;
+  }
+  .right-payment-conditions,
+  .left-payment-conditions {
+    width: 100%;
+  }
+  .right-main {
+    width: 100%;
+    padding: 30px 0;
+    margin-left: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    display: flex;
+    justify-content: center;
+  }
+  .mother-div {
+    display: flex;
+    width: 100%;
+    margin-top: 30px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .mother-div p {
+    width: 75%;
+    margin: auto;
+  }
+  .calculate-btn {
+    padding: 8px 0;
+    background-color: hsl(61, 70%, 52%);
+    color: hsl(202, 55%, 16%);
+    width: 100%;
+    justify-content: center;
+    font-size: 1.4rem;
+  }
+}
